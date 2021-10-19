@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
-    "lint": "eslint ."
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "start": "cross-env NODE_ENV=production node app.js",
+    "lint": "cross-env NODE_ENV=development eslint ."
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "mongoose": "^5.11.10"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.0.1",
     "nodemon": "^2.0.7"
   }
