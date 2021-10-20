@@ -1,5 +1,5 @@
+require('express-async-errors')
 const taskRouter = require('./routes/task')
-
 const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
