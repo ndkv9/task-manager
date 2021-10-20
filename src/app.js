@@ -1,5 +1,3 @@
-const dotenv = require('dotenv')
-dotenv.config()
 const taskRouter = require('./routes/task')
 
 const express = require('express')
