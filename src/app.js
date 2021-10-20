@@ -1,5 +1,6 @@
 const dotenv = require('dotenv')
 dotenv.config()
+const taskRouter = require('./routes/task')
 
 const express = require('express')
 const cors = require('cors')
@@ -11,8 +12,10 @@ app.use(cors())
 app.use(helmet())
 app.use(express.json())
 
+// routes
 app.get('/ping', (_req, res) => {
   res.send('pong!')
 })
+app.use('/api/v1/tasks', taskRouter)
 
 module.exports = app
