@@ -1,8 +1,16 @@
 const mongoose = require('mongoose')
 
 const TaskSchema = new mongoose.Schema({
-  name: String,
-  completed: Boolean,
+  name: {
+    type: String,
+    required: [true, 'must provide task name'],
+    maxlength: [20, 'name cannot be more than 20 characters'],
+    trim: true,
+  },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 TaskSchema.set('toJSON', {
