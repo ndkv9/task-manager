@@ -4,8 +4,14 @@ const getAllTasks = async (_req, res) => {
   res.status(200).json({ tasks })
 }
 
-const getTask = (req, res) => {
-  res.json({ id: req.params.id })
+const getTask = async (req, res) => {
+  const id = req.params.id
+  const returnedTask = await Task.findById(id)
+  if (!returnedTask) {
+    return res.status(404).json({ msg: `cannot found task with id ${id}` })
+  }
+
+  return res.status(200).json({ task: returnedTask })
 }
 
 const createTask = async (req, res) => {
