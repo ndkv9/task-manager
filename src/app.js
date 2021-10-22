@@ -3,6 +3,7 @@ const taskRouter = require('./routes/task')
 const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
+const notFound = require('./middlewares/404')
 
 const app = express()
 
@@ -16,5 +17,6 @@ app.get('/ping', (_req, res) => {
   res.send('pong!')
 })
 app.use('/api/v1/tasks', taskRouter)
+app.use(notFound)
 
 module.exports = app

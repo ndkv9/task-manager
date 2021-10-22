@@ -16,8 +16,8 @@ const showTasks = async () => {
       return
     }
     const allTasks = tasks
-      .map((task) => {
-        const { completed, _id: taskID, name } = task
+      .map(task => {
+        const { completed, id: taskID, name } = task
         return `<div class="single-task ${completed && 'task-completed'}">
 <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
 <div class="task-links">
@@ -48,7 +48,7 @@ showTasks()
 
 // delete task /api/tasks/:id
 
-tasksDOM.addEventListener('click', async (e) => {
+tasksDOM.addEventListener('click', async e => {
   const el = e.target
   if (el.parentElement.classList.contains('delete-btn')) {
     loadingDOM.style.visibility = 'visible'
@@ -65,7 +65,7 @@ tasksDOM.addEventListener('click', async (e) => {
 
 // form
 
-formDOM.addEventListener('submit', async (e) => {
+formDOM.addEventListener('submit', async e => {
   e.preventDefault()
   const name = taskInputDOM.value
 

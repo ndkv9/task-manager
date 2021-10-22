@@ -1,7 +1,7 @@
 const Task = require('../models/Task')
 const getAllTasks = async (_req, res) => {
   const tasks = await Task.find({})
-  res.status(200).json({ tasks })
+  res.status(200).json({ tasks, amount: tasks.length })
 }
 
 const getTask = async (req, res) => {
