@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "start": "cross-env NODE_ENV=production node src/index.js",
-    "lint": "cross-env NODE_ENV=development eslint ."
+    "lint": "cross-env NODE_ENV=development eslint .",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,8 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.0.1",
-    "nodemon": "^2.0.7"
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.6"
   }
 }

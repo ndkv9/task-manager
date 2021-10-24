@@ -5,6 +5,11 @@ const cors = require('cors')
 const helmet = require('helmet')
 const notFound = require('./middlewares/404')
 const errorHandler = require('./middlewares/errorHandler')
+const config = require('./utils/config')
+const connectDB = require('./db/connect')
+
+console.log('connecting to', config.MONGODB_URI)
+connectDB(config.MONGODB_URI)
 
 const app = express()
 
