@@ -8,7 +8,7 @@ const errorHandler = require('./middlewares/errorHandler')
 const config = require('./utils/config')
 const connectDB = require('./db/connect')
 
-console.log('connecting to', config.MONGODB_URI)
+console.log('connecting to DB:', config.MONGODB_URI)
 connectDB(config.MONGODB_URI)
 
 const app = express()
